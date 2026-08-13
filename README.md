@@ -137,12 +137,46 @@ npm run typecheck # TypeScript 类型检查
 **方式二**：使用仓库内置的 `deploy-cloudflare-pages.yml` 工作流，需配置 Secrets：
 `CF_API_TOKEN`（Pages:Edit 权限）与 `CF_ACCOUNT_ID`。
 
+### 添加 Google Analytics（谷歌统计）
+
+项目内置 GA4 统计组件（`src/components/GoogleAnalytics.tsx`），构建时读取环境变量
+`NEXT_PUBLIC_GA_ID`：设置了才注入 gtag 脚本，未设置时不输出任何内容，不影响其他平台部署。
+
+1. 在 Google Analytics 后台创建 GA4 媒体资源 → 添加 Web 数据流，获取形如 `G-XXXXXXXXXX` 的测量 ID
+2. 按你的部署方式配置：
+
+- **方式一（Cloudflare Pages 直连 Git）**：Cloudflare Dashboard → Pages → 你的项目 →
+  **Settings → Environment variables**，添加 `NEXT_PUBLIC_GA_ID`（Production 环境），
+  保存后到 **Deployments** 重新部署一次
+- **方式二（GitHub Actions 部署）**：GitHub 仓库 → **Settings → Secrets and variables → Actions**，
+  新建 Secret `NEXT_PUBLIC_GA_ID`，然后推送代码触发部署
+
+3. 验证：构建后检查 `out/index.html` 中是否包含 `googletagmanager.com/gtag/js`；
+   发布后可在 GA4 后台 **Realtime** 面板实时确认访问数据
+
+### 添加 Google AdSense（谷歌广告）
+
+项目内置 AdSense 自动广告组件（`src/components/GoogleAdsense.tsx`），构建时读取环境变量
+`NEXT_PUBLIC_ADSENSE_CLIENT`：设置了才加载广告脚本，未设置时不输出任何内容。
+
+1. 站点内容通过 **Google AdSense 审核**（需有足够的原创内容与隐私政策等页面）
+2. 在 AdSense 后台获取发布商 ID，形如 `ca-pub-XXXXXXXXXXXXXXXX`
+3. 按你的部署方式配置（同 Google Analytics 的两种方式，变量名改为 `NEXT_PUBLIC_ADSENSE_CLIENT`）
+4. 审核通过后在 AdSense 后台 **自动广告** 中开启广告位类型（如信息流、插页式等），
+   Google 会根据页面内容自动投放广告
+
+> 如需在文章指定位置插入**手动广告单元**，可在目标组件中放置
+> `<ins class="adsbygoogle" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX" />`
+> 并调用 `(adsbygoogle = window.adsbygoogle || []).push({})`。
+
 ## 环境变量
 
 | 变量 | 说明 | 示例 |
 | ---- | ---- | ---- |
 | `NEXT_PUBLIC_BASE_PATH` | 部署子路径（GitHub Pages 项目站点必填） | `/repo-name`，Cloudflare 为空 |
 | `NEXT_PUBLIC_SITE_URL` | 站点地址，用于 SEO 元数据 | `https://example.github.io/repo` |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 测量 ID（可选，设置后构建期自动注入统计代码） | `G-XXXXXXXXXX` |
+| `NEXT_PUBLIC_ADSENSE_CLIENT` | Google AdSense 发布商 ID（可选，设置后构建期加载自动广告脚本） | `ca-pub-XXXXXXXXXXXXXXXX` |
 
 ## License
 

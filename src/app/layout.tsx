@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import GoogleAdsense from "@/components/GoogleAdsense";
 
 const siteName = "HiCode Docs";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
@@ -29,6 +31,8 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body>
+        <GoogleAnalytics />
+        <GoogleAdsense />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

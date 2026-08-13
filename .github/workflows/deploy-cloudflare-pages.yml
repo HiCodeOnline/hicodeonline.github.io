@@ -22,8 +22,13 @@ jobs:
         run: npm ci
 
       # Cloudflare Pages 部署在根路径，无需设置 basePath
+      # NEXT_PUBLIC_GA_ID / NEXT_PUBLIC_ADSENSE_CLIENT 为可选 Secret：
+      # 设置后在构建期注入 Google Analytics 统计代码与 AdSense 自动广告脚本
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_ADSENSE_CLIENT: ${{ secrets.NEXT_PUBLIC_ADSENSE_CLIENT }}
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
