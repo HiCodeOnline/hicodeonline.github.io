@@ -35,7 +35,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy out --project-name=${{ github.event.repository.name }}
+          command: pages deploy out --project-name=hicode
 
       # 首次部署前需先创建 Pages 项目，可执行一次：
       # npx wrangler pages project create <project-name> --production-branch=main
