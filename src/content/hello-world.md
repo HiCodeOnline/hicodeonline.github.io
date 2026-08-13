@@ -94,6 +94,24 @@ tags: ["标签1", "标签2"]
 全球边缘网络托管的静态站点服务，支持自动构建、全球 CDN 与免费 HTTPS。
 :::
 
+## 轮播图示例
+
+通过 `:::carousel` 指令可以将多张图片组合为轮播图，点击图片可全屏查看：
+
+```md
+:::carousel{title="站点封面预览"}
+![你好，世界](/covers/cover-hello.svg)
+![部署指南](/covers/cover-deploy.svg)
+![静态生成](/covers/cover-ssg.svg)
+:::
+```
+
+:::carousel{title="站点封面预览"}
+![你好，世界](/covers/cover-hello.svg)
+![部署指南](/covers/cover-deploy.svg)
+![静态生成](/covers/cover-ssg.svg)
+:::
+
 ## 了解更多
 
 前往[部署指南](/posts/deployment-guide)查看如何发布到 GitHub Pages 与 Cloudflare Pages。

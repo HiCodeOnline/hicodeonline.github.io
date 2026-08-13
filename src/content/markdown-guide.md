@@ -59,3 +59,20 @@ console.log("hello");
 | `category` | 分类 | ❌ |
 | `cover` | 封面图路径 | ❌ |
 | `tags` | 标签数组 | ❌ |
+
+## 轮播图指令
+
+`:::carousel` 容器指令可以将多张图片组合为轮播图，可选 `title` 属性作为标题：
+
+```md
+:::carousel{title="设计稿预览"}
+![封面 A](/covers/cover-a.svg)
+![封面 B](/covers/cover-b.svg)
+![封面 C](/covers/cover-c.svg)
+:::
+```
+
+- 指令内每张图片用普通 Markdown 图片语法 `![描述](路径)` 编写
+- 点击当前图片进入全屏查看，全屏支持左右切换（按钮 / 键盘方向键 / 触摸滑动）
+- 指示点可点击跳转到对应图片
+- 图片路径支持站内绝对路径与外部 URL

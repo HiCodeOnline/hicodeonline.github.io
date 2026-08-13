@@ -48,6 +48,10 @@ npm run dev        # 本地开发 http://localhost:3000
 │   │   └── posts/[slug]/page.tsx     # 文档详情（SSG 生成）
 │   ├── components/
 │   │   ├── Markdown.tsx              # Markdown 渲染组件（basePath 兼容）
+│   │   ├── Admonition.tsx            # :::tip 等提示框指令
+│   │   ├── Card.tsx                  # :::card 链接卡片指令
+│   │   ├── Carousel.tsx              # :::carousel 轮播图指令（支持全屏查看）
+│   │   ├── PostImage.tsx             # 文章图片（点击全屏查看）
 │   │   ├── PostCard.tsx              # 文章卡片（封面/标题/分类/标签/时间）
 │   │   ├── PostMasonry.tsx           # 瀑布流 + 滚动无限加载（客户端）
 │   │   ├── SiteHeader.tsx

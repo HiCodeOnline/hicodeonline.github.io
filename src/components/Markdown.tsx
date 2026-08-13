@@ -8,6 +8,7 @@ import { remarkCustomDirectives } from "@/lib/remark-custom";
 import { remarkImageSize } from "@/lib/remark-image";
 import Admonition from "@/components/Admonition";
 import Card from "@/components/Card";
+import Carousel from "@/components/Carousel";
 import PostImage from "@/components/PostImage";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -52,6 +53,8 @@ export default function Markdown({ content }: { content: string }) {
           admonition: (props: any) => <Admonition {...props} />,
           // 自定义元素：:::card{...} 指令 → Card 组件
           card: (props: any) => <Card {...props} />,
+          // 自定义元素：:::carousel{...} 指令 → Carousel 组件
+          carousel: (props: any) => <Carousel {...props} />,
           // 图片：支持尺寸比例设置 + 点击全屏放大/缩放
           img: (props: any) => <PostImage {...props} />,
         } as any // react-markdown 的 Components 类型不含 admonition/card 自定义键
