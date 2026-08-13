@@ -334,6 +334,68 @@ main {
   padding-bottom: 0.5rem;
 }
 
+/* ---------- 顶部分类过滤条 ---------- */
+
+.masonry-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.masonry-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-secondary);
+  color: var(--fg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.masonry-filter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.masonry-filter.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.masonry-filter__count {
+  min-width: 1.15rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: var(--code-bg);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3rem;
+}
+
+.masonry-filter.is-active .masonry-filter__count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.masonry-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 3rem 0;
+  font-size: 0.95rem;
+}
+
 /* 多列布局实现瀑布流：卡片高度由封面宽高比 + 内容决定，形成错落感 */
 .masonry {
   columns: 3;
@@ -382,7 +444,6 @@ main {
 }
 
 .post-card:hover {
-  border-color: var(--accent);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
   transform: translateY(-3px);
 }
@@ -532,9 +593,8 @@ main {
 
 .post-category {
   display: inline-block;
-  margin-top: 0.5rem;
   padding: 0.15rem 0.7rem;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--accent-soft);
   color: var(--accent);
   font-size: 0.78rem;
@@ -544,7 +604,7 @@ main {
 /* ---------- Post detail ---------- */
 
 .post {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 /* 详情页封面图 */

@@ -43,15 +43,6 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <article className="container post">
-      {post.cover ? (
-        <div className="post-cover">
-          <img
-            src={resolveAsset(post.cover)}
-            alt={post.title}
-            decoding="async"
-          />
-        </div>
-      ) : null}
       <header className="post-header">
         {post.category ? (
           <span className="post-category">{post.category}</span>
