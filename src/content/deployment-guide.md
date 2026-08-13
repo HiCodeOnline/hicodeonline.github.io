@@ -2,6 +2,8 @@
 title: "部署指南：GitHub Pages 与 Cloudflare Pages"
 date: "2026-08-12"
 excerpt: "详细介绍如何将本站发布到 GitHub Pages 与 Cloudflare Pages，以及 basePath 的工作原理。"
+category: "部署"
+cover: "/covers/cover-deploy.svg"
 tags: ["部署", "GitHub Pages", "Cloudflare Pages"]
 ---
 

@@ -4,8 +4,8 @@
   "private": true,
   "description": "基于 Next.js SSG 的 Markdown 文档站点，可发布到 GitHub Pages 与 Cloudflare Pages",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "node scripts/generate-posts-json.mjs && next dev",
+    "build": "node scripts/generate-posts-json.mjs && next build",
     "preview": "serve out",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf .next out"

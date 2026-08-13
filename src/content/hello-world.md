@@ -2,6 +2,8 @@
 title: "你好，世界"
 date: "2026-08-13"
 excerpt: "欢迎来到 HiCode Docs —— 一个基于 Next.js 静态导出（SSG）的 Markdown 文档站点。"
+category: "入门"
+cover: "/covers/cover-hello.svg"
 tags: ["Next.js", "SSG", "Markdown"]
 ---
 
@@ -16,6 +18,8 @@ tags: ["Next.js", "SSG", "Markdown"]
 title: "我的文档标题"
 date: "2026-08-13"
 excerpt: "摘要内容"
+category: "分类名"           # 可选，用于卡片上的分类徽标
+cover: "/covers/xxx.svg"    # 可选，文章封面
 tags: ["标签1", "标签2"]
 ---
 

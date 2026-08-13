@@ -7,9 +7,16 @@ export type Post = {
   title: string;
   date: string;
   excerpt?: string;
+  /** 文章分类 */
+  category?: string;
+  /** 文章封面：站内路径（如 /covers/xxx.svg）或外部 URL */
+  cover?: string;
   tags?: string[];
   content: string;
 };
+
+/** 不含正文的元信息，用于列表 / 卡片 / posts-data.json */
+export type PostMeta = Omit<Post, "content">;
 
 const postsDirectory = path.join(process.cwd(), "src", "content");
 
@@ -24,6 +31,8 @@ export function getPostBySlug(slug: string): Post {
     title: data.title ?? slug,
     date: data.date ?? "",
     excerpt: data.excerpt ?? "",
+    category: data.category ?? "",
+    cover: data.cover ?? "",
     tags: Array.isArray(data.tags) ? data.tags : [],
     content,
   };

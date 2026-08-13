@@ -23,6 +23,7 @@ export default function PostsPage() {
               <span className="post-title">{post.title}</span>
               <time dateTime={post.date}>{post.date}</time>
             </Link>
+            {post.category && <span className="post-category">{post.category}</span>}
             {post.excerpt && <p className="post-excerpt">{post.excerpt}</p>}
             {post.tags && post.tags.length > 0 && (
               <div className="post-tags">

@@ -1,0 +1,151 @@
+{
+  "posts": [
+    {
+      "slug": "hello-world",
+      "title": "你好，世界",
+      "date": "2026-08-13",
+      "excerpt": "欢迎来到 HiCode Docs —— 一个基于 Next.js 静态导出（SSG）的 Markdown 文档站点。",
+      "category": "入门",
+      "cover": "/covers/cover-hello.svg",
+      "tags": [
+        "Next.js",
+        "SSG",
+        "Markdown"
+      ]
+    },
+    {
+      "slug": "deployment-guide",
+      "title": "部署指南：GitHub Pages 与 Cloudflare Pages",
+      "date": "2026-08-12",
+      "excerpt": "详细介绍如何将本站发布到 GitHub Pages 与 Cloudflare Pages，以及 basePath 的工作原理。",
+      "category": "部署",
+      "cover": "/covers/cover-deploy.svg",
+      "tags": [
+        "部署",
+        "GitHub Pages",
+        "Cloudflare Pages"
+      ]
+    },
+    {
+      "slug": "nextjs-ssg",
+      "title": "Next.js SSG 静态生成深入解析",
+      "date": "2026-08-11",
+      "excerpt": "理解 App Router 下的静态导出机制：页面何时在构建期被渲染、如何与客户端交互保持兼容。",
+      "category": "前端",
+      "cover": "/covers/cover-ssg.svg",
+      "tags": [
+        "Next.js",
+        "SSG",
+        "App Router"
+      ]
+    },
+    {
+      "slug": "markdown-guide",
+      "title": "Markdown 语法速查：写作一篇好文档",
+      "date": "2026-08-10",
+      "excerpt": "从标题、列表到表格、任务清单，一篇速查清单帮你快速上手 Markdown 写作。",
+      "category": "教程",
+      "cover": "/covers/cover-markdown.svg",
+      "tags": [
+        "Markdown",
+        "写作"
+      ]
+    },
+    {
+      "slug": "react-19",
+      "title": "React 19 新特性一览",
+      "date": "2026-08-09",
+      "excerpt": "Actions、useOptimistic、use() Hook 与更简单的文档元数据管理，React 19 带来了哪些变化。",
+      "category": "前端",
+      "cover": "/covers/cover-react.svg",
+      "tags": [
+        "React",
+        "前端"
+      ]
+    },
+    {
+      "slug": "git-workflow",
+      "title": "Git 工作流最佳实践",
+      "date": "2026-08-08",
+      "excerpt": "分支策略、提交信息规范、代码评审与历史重写，一套可持续的 Git 工作流建议。",
+      "category": "工具",
+      "cover": "/covers/cover-git.svg",
+      "tags": [
+        "Git",
+        "协作"
+      ]
+    },
+    {
+      "slug": "css-modern",
+      "title": "现代 CSS 布局技术：从 Grid 到瀑布流",
+      "date": "2026-08-07",
+      "excerpt": "CSS Grid、多列布局（multi-column）与容器查询，如何在不依赖 JS 的情况下实现瀑布流。",
+      "category": "前端",
+      "cover": "/covers/cover-css.svg",
+      "tags": [
+        "CSS",
+        "布局"
+      ]
+    },
+    {
+      "slug": "typescript-tips",
+      "title": "TypeScript 实用技巧十则",
+      "date": "2026-08-06",
+      "excerpt": "从类型收窄、联合类型到 Omit、satisfies，提升日常开发体验的十个实用技巧。",
+      "category": "前端",
+      "cover": "/covers/cover-ts.svg",
+      "tags": [
+        "TypeScript",
+        "工程化"
+      ]
+    },
+    {
+      "slug": "cloudflare-pages",
+      "title": "Cloudflare Pages 进阶配置",
+      "date": "2026-08-05",
+      "excerpt": "自定义域名、重定向规则、缓存策略与 Wrangler CLI 的高级用法。",
+      "category": "部署",
+      "cover": "/covers/cover-cloudflare.svg",
+      "tags": [
+        "Cloudflare",
+        "部署"
+      ]
+    },
+    {
+      "slug": "blog-roadmap",
+      "title": "HiCode Docs 路线图",
+      "date": "2026-08-04",
+      "excerpt": "记录站点的过去、现在与未来：已完成的 SSG 改造，正在打磨的瀑布流首页，以及计划中的检索与评论。",
+      "category": "随笔",
+      "cover": "/covers/cover-blog.svg",
+      "tags": [
+        "路线图",
+        "随笔"
+      ]
+    },
+    {
+      "slug": "seo-guide",
+      "title": "静态站点 SEO 优化指南",
+      "date": "2026-08-03",
+      "excerpt": "语义化 HTML、结构化数据、sitemap 与 meta 标签，让静态博客获得更好的搜索引擎表现。",
+      "category": "教程",
+      "cover": "/covers/cover-seo.svg",
+      "tags": [
+        "SEO",
+        "性能"
+      ]
+    },
+    {
+      "slug": "vscode-tips",
+      "title": "VS Code 效率插件与快捷键",
+      "date": "2026-08-02",
+      "excerpt": "把编辑器调教成趁手的工具：推荐插件清单、主题与高频快捷键。",
+      "category": "工具",
+      "cover": "/covers/cover-vscode.svg",
+      "tags": [
+        "VS Code",
+        "效率"
+      ]
+    }
+  ]
+}

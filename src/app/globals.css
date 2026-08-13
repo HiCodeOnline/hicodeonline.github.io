@@ -317,10 +317,250 @@ main {
   font-size: 0.78rem;
 }
 
+/* ---------- Home：瀑布流 ---------- */
+
+.container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  margin: 0 0 1.25rem;
+}
+
+.masonry-section {
+  padding-bottom: 0.5rem;
+}
+
+/* 多列布局实现瀑布流：卡片高度由封面宽高比 + 内容决定，形成错落感 */
+.masonry {
+  columns: 3;
+  column-gap: 1.25rem;
+}
+
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonry {
+    columns: 1;
+  }
+}
+
+.masonry-sentinel {
+  height: 1px;
+}
+
+.masonry-end {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+  padding: 0.25rem 0 1.5rem;
+}
+
+/* ---------- 文章卡片 ---------- */
+
+.post-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.post-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.post-card__link {
+  display: block;
+  color: var(--fg);
+}
+
+.post-card__link:hover {
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.post-card__cover {
+  width: 100%;
+  background: var(--code-bg);
+}
+
+/* 保持封面原始宽高比，让瀑布流高度自然错落 */
+.post-card__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.post-card__cover--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.post-card__body {
+  padding: 0.9rem 1.1rem 1.1rem;
+}
+
+.post-card__category {
+  display: inline-block;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.post-card__title {
+  margin: 0.55rem 0 0.4rem;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.post-card__link:hover .post-card__title {
+  color: var(--accent);
+}
+
+.post-card__excerpt {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--border);
+}
+
+.post-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.post-card__tag {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.post-card__date {
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* ---------- 卡片骨架屏（加载中） ---------- */
+
+.post-card--skeleton {
+  pointer-events: none;
+}
+
+.post-card__skeleton-block {
+  background: linear-gradient(90deg, var(--code-bg) 25%, var(--bg) 50%, var(--code-bg) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.2s ease infinite;
+}
+
+.post-card__cover.post-card__skeleton-block {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.post-card__skeleton-title {
+  height: 1.2rem;
+  width: 70%;
+  margin: 0.7rem 0;
+  border-radius: 4px;
+}
+
+.post-card__skeleton-line {
+  height: 0.85rem;
+  width: 90%;
+  margin-top: 0.55rem;
+  border-radius: 4px;
+}
+
+.post-card__skeleton-line:last-child {
+  width: 60%;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ---------- 分类徽标（列表页 / 详情页通用） ---------- */
+
+.post-category {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
 /* ---------- Post detail ---------- */
 
 .post {
   padding-top: 2rem;
+}
+
+/* 详情页封面图 */
+.post-cover {
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.post-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 0;
 }
 
 /* 详情页两栏：正文 + 右侧 sticky 目录 */

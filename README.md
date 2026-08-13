@@ -6,6 +6,8 @@
 
 - **SSG 静态导出**：`output: "export"`，构建产物为纯静态 HTML，加载快、无需服务器
 - **Markdown 驱动**：文档以 Markdown 编写，放在 `src/content/` 目录，支持 GFM 表格、任务列表等语法
+- **分类 / 封面 / 标签**：Frontmatter 声明 `category`、`cover`、`tags`，首页卡片瀑布流展示
+- **滚动无限加载**：构建期生成 `public/posts-data.json`，客户端渐进渲染，保持纯静态托管
 - **双平台部署**：通过环境变量控制 `basePath`，无缝适配 GitHub Pages 子路径与 Cloudflare Pages 根路径
 - **CI 自动发布**：内置 GitHub Actions 工作流，推送即部署
 
@@ -35,7 +37,9 @@ npm run dev        # 本地开发 http://localhost:3000
 │   └── deploy-cloudflare-pages.yml   # Cloudflare Pages 自动部署
 ├── public/
 │   ├── _headers                     # Cloudflare Pages 响应头（含缓存策略）
+│   ├── covers/                      # 文章封面（SVG）
 │   ├── favicon.svg
+│   ├── posts-data.json              # 构建期自动生成，勿手改
 │   └── robots.txt
 ├── src/
 │   ├── app/                          # Next.js App Router 页面
@@ -44,13 +48,16 @@ npm run dev        # 本地开发 http://localhost:3000
 │   │   └── posts/[slug]/page.tsx     # 文档详情（SSG 生成）
 │   ├── components/
 │   │   ├── Markdown.tsx              # Markdown 渲染组件（basePath 兼容）
+│   │   ├── PostCard.tsx              # 文章卡片（封面/标题/分类/标签/时间）
+│   │   ├── PostMasonry.tsx           # 瀑布流 + 滚动无限加载（客户端）
 │   │   ├── SiteHeader.tsx
 │   │   └── SiteFooter.tsx
 │   ├── content/                      # ★ Markdown 文档目录
-│   │   ├── hello-world.md
-│   │   └── deployment-guide.md
+│   │   └── *.md                      # 每篇一个 Markdown 文件
 │   └── lib/
 │       └── posts.ts                  # Markdown 读取工具
+├── scripts/
+│   └── generate-posts-json.mjs       # 构建期生成 posts-data.json（无限加载数据源）
 ├── next.config.ts                    # 静态导出 + basePath 配置
 └── wrangler.toml                     # Cloudflare Pages 构建设置
 ```
@@ -64,7 +71,9 @@ npm run dev        # 本地开发 http://localhost:3000
 title: "文档标题"
 date: "2026-08-13"
 excerpt: "摘要"
-tags: ["标签1", "标签2"]
+category: "分类名"          # 可选
+cover: "/covers/xxx.svg"   # 可选，站内路径或外部 URL
+tags: ["标签1", "标签2"]   # 可选
 ---
 
 正文内容，支持 **Markdown** 与 GFM 语法。
