@@ -5,8 +5,10 @@ import remarkDirective from "remark-directive";
 import rehypeSlug from "rehype-slug";
 import rehypeHighlight from "rehype-highlight";
 import { remarkCustomDirectives } from "@/lib/remark-custom";
+import { remarkImageSize } from "@/lib/remark-image";
 import Admonition from "@/components/Admonition";
 import Card from "@/components/Card";
+import PostImage from "@/components/PostImage";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -27,7 +29,12 @@ function resolveHref(href: string | undefined): string | undefined {
 export default function Markdown({ content }: { content: string }) {
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm, remarkDirective, remarkCustomDirectives]}
+      remarkPlugins={[
+        remarkGfm,
+        remarkDirective,
+        remarkCustomDirectives,
+        remarkImageSize,
+      ]}
       // rehype-slug：为标题生成 id 锚点（目录跳转依赖）
       // rehype-highlight：同步插件，输出 CSS 类（.hljs-*）；
       //   detect 让无语言标记的代码块也自动检测，ignoreMissing 避免未知语言抛错
@@ -45,6 +52,8 @@ export default function Markdown({ content }: { content: string }) {
           admonition: (props: any) => <Admonition {...props} />,
           // 自定义元素：:::card{...} 指令 → Card 组件
           card: (props: any) => <Card {...props} />,
+          // 图片：支持尺寸比例设置 + 点击全屏放大/缩放
+          img: (props: any) => <PostImage {...props} />,
         } as any // react-markdown 的 Components 类型不含 admonition/card 自定义键
       }
     >
