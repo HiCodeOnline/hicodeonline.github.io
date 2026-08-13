@@ -139,6 +139,12 @@ a:hover {
   text-decoration: none;
 }
 
+.nav-git-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 /* ---------- Main / Footer ---------- */
 
 main {
@@ -349,7 +355,7 @@ main {
   gap: 0.4rem;
   padding: 0.35rem 0.95rem;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 12px;
   background: var(--bg-secondary);
   color: var(--fg);
   font-size: 0.875rem;
