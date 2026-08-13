@@ -1,6 +1,6 @@
 # Cloudflare Pages 配置
 # 连接 Git 仓库时，Cloudflare 会读取本文件中的构建设置
-name = "hicode"
+name = "hicodeonline"
 compatibility_date = "2026-01-01"
 
 [build]
