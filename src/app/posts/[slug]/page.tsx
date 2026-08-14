@@ -44,14 +44,14 @@ export default async function PostPage({ params }: Props) {
   return (
     <article className="container post">
       <header className="post-header">
-        {post.category ? (
-          <span className="post-category">{post.category}</span>
-        ) : null}
         <h1>{post.title}</h1>
         <p className="post-meta">
+          {post.category ? (
+            <span className="post-category">{post.category}</span>
+          ) : null}
           <time dateTime={post.date}>{post.date}</time>
           {post.tags && post.tags.length > 0 && (
-            <span> · {post.tags.join(" / ")}</span>
+            <span> &nbsp;&nbsp;·&nbsp;&nbsp;{post.tags.join(" , ")}</span>
           )}
         </p>
       </header>

@@ -146,6 +146,30 @@
         "VS Code",
         "效率"
       ]
+    },
+    {
+      "slug": "android-hihanfu-with-neumorphism",
+      "title": "新拟态设计汉服管理APP",
+      "date": "2026-07-26",
+      "excerpt": "汉服爱好者原生Android Jetpack Compose技术栈实现，支持国际化、暗黑主题",
+      "category": "Android",
+      "cover": "/images/hihanfuwithneumorphism/cover.webp",
+      "tags": [
+        "JetpackCompose",
+        "记账"
+      ]
+    },
+    {
+      "slug": "android-hiwallet-with-neumorphism",
+      "title": "新拟态设计支出记账APP",
+      "date": "2026-07-13",
+      "excerpt": "原生Android Jetpack Compose技术栈实现，支持国际化、暗黑主题",
+      "category": "Android",
+      "cover": "/images/hihanfuwithneumorphism/cover.webp",
+      "tags": [
+        "JetpackCompose",
+        "记账"
+      ]
     }
   ]
 }

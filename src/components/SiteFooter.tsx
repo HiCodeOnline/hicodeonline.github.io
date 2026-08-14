@@ -1,9 +1,9 @@
 export default function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="full-container">
+      <div className="">
         <p>
-          © {new Date().getFullYear()} HiCode.Online · 学如逆水行舟、不进则退
+          © {new Date().getFullYear()} HiCode.Online · Happy with Apache 2.0
         </p>
       </div>
     </footer>

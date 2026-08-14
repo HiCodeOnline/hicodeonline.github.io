@@ -6,19 +6,14 @@ export default function SiteHeader() {
       <div className="full-container header-inner">
         <Link href="/" className="brand">
           HiCode.Online
-
-          😁😀😆🥰😍
         </Link>
         <nav>
-          <Link href="/" className="nav-git-item">
-            GitHub
+          {/* <Link href="https://gitee.com/LikeOrLove" target="__blank" className="nav-git-item">
+            YouTube
           </Link>
-          <Link href="/posts/" className="nav-git-item">
-            Gitee
-          </Link>
-          <Link href="/posts/" className="nav-git-item">
-            CNB
-          </Link>
+          <Link href="https://cnb.cool/hicodeonline" target="__blank" className="nav-git-item">
+            BiliBili
+          </Link> */}
         </nav>
       </div>
     </header>

@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     default: `${siteName} — Markdown 文档站点`,
     template: `%s | ${siteName}`,
   },
+  icons: {
+    icon: '/favicon.svg', // 指向 public 目录下的文件
+    apple: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
   description:
     "基于 Next.js 静态导出（SSG）的 Markdown 文档站点，支持发布到 GitHub Pages 与 Cloudflare Pages。",
   metadataBase: new URL(siteUrl),
