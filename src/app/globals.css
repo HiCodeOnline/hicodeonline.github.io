@@ -122,7 +122,6 @@ a:hover {
 
 .brand:hover {
   text-decoration: none;
-  color: var(--accent);
 }
 
 .site-header nav {
@@ -731,7 +730,6 @@ main {
 .post-meta {
   color: var(--muted);
   font-size: 0.9rem;
-  margin: 0 0 2rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -997,7 +995,6 @@ main {
 }
 
 a.card:hover {
-  border-color: var(--accent);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
   text-decoration: none;

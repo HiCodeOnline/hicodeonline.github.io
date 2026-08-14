@@ -7,15 +7,14 @@ cover: "/images/hihanfuwithneumorphism/cover.webp"    # 可选，文章封面
 tags: ["JetpackCompose", "Room", "Hilt", "汉服"]
 ---
 
+体验安装包请到[GitHub](https://github.com/HiCodeOnline/AndroidHiWalletWithNeumorphism/releases)下载，想自己打包看[手把手教你打包](#手把手教你打包)
+
 ## 源码仓库
 
 :::card{title="GitHub" url="https://github.com/HiCodeOnline/AndroidHiHanfuWithNeumorphism" image="/github.svg"}
 :::
 
 :::card{title="Gitee" url="https://gitee.com/LikeOrLove/android-hi-hanfu-with-neumorphism" image="/gitee.svg"}
-:::
-
-:::card{title="CNB" url="https://cnb.cool/hicodeonline/AndroidHiHanfuWithNeumorphism" image="/cnb.svg"}
 :::
 
 ## 效果图
@@ -86,7 +85,7 @@ maven { url = uri("https://maven.aliyun.com/nexus/content/repositories/google") 
 
 生成之前需要先生成一个专门用于release的keystore文件
 
-::: danger
+:::danger
 生成这个文件的信息一定要记住，用于后续升级时打包，否则会出现问题
 :::
 
@@ -98,7 +97,7 @@ maven { url = uri("https://maven.aliyun.com/nexus/content/repositories/google") 
     ```shell
     # Android Studio 自带了该工具
     # F:\software\AndroidStudio\jbr\bin
-    keytool -genkey -v -keystore hiwallet.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
+    keytool -genkey -v -keystore hihanfu.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
     ```
 
 生成完成后，在生成弹窗中选择该文件，按提示步骤即可完成打包操作

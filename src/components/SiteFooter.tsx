@@ -3,7 +3,7 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="">
         <p>
-          © {new Date().getFullYear()} HiCode.Online · Happy with Apache 2.0
+          © {new Date().getFullYear()} HiCode.Online · Under with Apache License 2.0
         </p>
       </div>
     </footer>

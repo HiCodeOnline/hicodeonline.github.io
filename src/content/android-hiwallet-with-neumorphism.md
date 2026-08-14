@@ -3,27 +3,29 @@ title: "新拟态设计支出记账APP"
 date: "2026-07-13"
 excerpt: "原生Android Jetpack Compose技术栈实现，支持国际化、暗黑主题"
 category: "Android"           # 可选，用于卡片上的分类徽标
-cover: "/images/hihanfuwithneumorphism/cover.webp"    # 可选，文章封面
+cover: "/images/hiwalletwithneumorphism/cover.webp"    # 可选，文章封面
 tags: ["JetpackCompose", "记账"]
 ---
 
-## 源码仓库【Apache 2.0】
+体验安装包请到[GitHub](https://github.com/HiCodeOnline/AndroidHiWalletWithNeumorphism/releases)下载，想自己打包的可以参考[手把手教你打包](#手把手教你打包)
 
-:::card{title="GitHub" url="https://nextjs.org" image="/github.svg"}
+## 源码仓库
+
+:::card{title="GitHub" url="https://github.com/HiCodeOnline/AndroidHiWalletWithNeumorphism" image="/github.svg"}
 :::
 
-:::card{title="GitHub" url="https://nextjs.org" image="/gitee.svg"}
-:::
-
-:::card{title="CNB" url="https://nextjs.org" image="/cnb.svg"}
+:::card{title="Gitee" url="https://gitee.com/LikeOrLove/android-hi-wallet-with-neumorphism" image="/gitee.svg"}
 :::
 
 ## 效果图
 
 :::carousel{title="APP效果图"}
-![图1](/covers/cover-hello.svg)
-![图2](/covers/cover-deploy.svg)
-![图3](/covers/cover-ssg.svg)
+![图1](/images/hiwalletwithneumorphism/p1.webp)
+![图2](/images/hiwalletwithneumorphism/p2.webp)
+![图3](/images/hiwalletwithneumorphism/p3.webp)
+![图3](/images/hiwalletwithneumorphism/p4.webp)
+![图3](/images/hiwalletwithneumorphism/p5.webp)
+![图3](/images/hiwalletwithneumorphism/p6.webp)
 :::
 
 ## 开发环境
@@ -80,7 +82,7 @@ maven { url = uri("https://maven.aliyun.com/nexus/content/repositories/google") 
 
 生成之前需要先生成一个专门用于release的keystore文件
 
-::: danger
+:::danger
 生成这个文件的信息一定要记住，用于后续升级时打包，否则会出现问题
 :::
 
@@ -104,7 +106,7 @@ maven { url = uri("https://maven.aliyun.com/nexus/content/repositories/google") 
 ```plaintext
 app/
 ├── src/
-│   ├── main/java/online/hicode/android/hihanfu/
+│   ├── main/java/online/hicode/android/hiwallet/
 │   │   ├── data/  数据层
 │   │   │   ├── dao/   数据库操作
 │   │   │   ├── database/   数据定义
@@ -118,7 +120,6 @@ app/
 │   │   │   ├── screen/   页面
 │   │   │   └── theme/   主题
 │   │   ├── utils/   工具类
-│   │   ├── HiHanfuApplication.kt   Hilt APP入口
 │   │   └── MainActivity.kt   应用入口
 │   ├── res/
 │   │   ├── drawable/ 图片资源，使用的svg图标通过Vector Image导入进这里使用
