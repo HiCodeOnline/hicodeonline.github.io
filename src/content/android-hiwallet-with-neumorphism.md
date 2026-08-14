@@ -104,19 +104,33 @@ maven { url = uri("https://maven.aliyun.com/nexus/content/repositories/google") 
 ```plaintext
 app/
 ├── src/
-│   ├── components/
-│   │   ├── Header.js
-│   │   └── Footer.js
-│   ├── pages/
-│   │   ├── index.js
-│   │   └── about.js
-│   └── styles/
-│       └── main.css
-├── public/
-│   ├── index.html
-│   └── favicon.ico
-├── package.json
-└── build.gradle.kts
+│   ├── main/java/online/hicode/android/hihanfu/
+│   │   ├── data/  数据层
+│   │   │   ├── dao/   数据库操作
+│   │   │   ├── database/   数据定义
+│   │   │   ├── entity/   数据库实体
+│   │   │   ├── repository/   数据操作
+│   │   │   └── vo/   数据展示
+│   │   ├── neumorphism/   新拟态设计
+│   │   ├── ui/   界面层
+│   │   │   ├── components/   组件
+│   │   │   ├── navigation/   页面导航相关
+│   │   │   ├── screen/   页面
+│   │   │   └── theme/   主题
+│   │   ├── utils/   工具类
+│   │   ├── HiHanfuApplication.kt   Hilt APP入口
+│   │   └── MainActivity.kt   应用入口
+│   ├── res/
+│   │   ├── drawable/ 图片资源，使用的svg图标通过Vector Image导入进这里使用
+│   │   ├── values/  默认国际化字符串
+│   │   └── xml/   一些配置文件
+│   └── build.gradle.kts app应用的gradle配置文件
+├── gradle/
+│   ├── libs.versions.toml  集中管理依赖版本
+│   └── wrapper/
+│       └── gradle-wrapper.properties   gradle配置
+├── build.gradle.kts
+└── settings.gradle.kts
 ```
 
 
