@@ -37,7 +37,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID_GITHUB }}
           NEXT_PUBLIC_ADSENSE_CLIENT: ${{ secrets.NEXT_PUBLIC_ADSENSE_CLIENT }}
           NEXT_PUBLIC_BUSUANZI_ENABLE: ${{ secrets.NEXT_PUBLIC_BUSUANZI_ENABLE }}
           NEXT_PUBLIC_BASE_PATH: 
