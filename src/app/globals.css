@@ -1332,3 +1332,15 @@ a.card:hover {
 .carousel-lightbox__close:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
+#busuanzi_container_site_pv {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#busuanzi_container_page_pv {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
