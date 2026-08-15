@@ -53,6 +53,8 @@ export default async function PostPage({ params }: Props) {
           {post.tags && post.tags.length > 0 && (
             <span> &nbsp;&nbsp;·&nbsp;&nbsp;{post.tags.join(" , ")}</span>
           )}
+          &nbsp;
+          <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
         </p>
       </header>
       <div className="post-layout">

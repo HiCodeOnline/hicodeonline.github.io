@@ -4,13 +4,14 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import GoogleAdsense from "@/components/GoogleAdsense";
+import Busuanzi from "@/components/Busuanzi";
 
-const siteName = "HiCode Docs";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const siteName = "HiCode.Onlline";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.hicode.online";
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteName} — Markdown 文档站点`,
+    default: `${siteName} — 开源源代码文档站点`,
     template: `%s | ${siteName}`,
   },
   icons: {
@@ -19,13 +20,13 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
   },
   description:
-    "基于 Next.js 静态导出（SSG）的 Markdown 文档站点，支持发布到 GitHub Pages 与 Cloudflare Pages。",
+    "HiCode.Online开源事业文章站点。",
   metadataBase: new URL(siteUrl),
   openGraph: {
     type: "website",
-    title: `${siteName} — Markdown 文档站点`,
+    title: `${siteName} — 开源源代码文档站点`,
     description:
-      "基于 Next.js 静态导出（SSG）的 Markdown 文档站点，支持发布到 GitHub Pages 与 Cloudflare Pages。",
+      "HiCode.Online开源事业文章站点",
     siteName,
   },
 };
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body>
+        <Busuanzi />
         <GoogleAnalytics />
         <GoogleAdsense />
         <SiteHeader />
