@@ -1,33 +1,31 @@
 ---
-title: "新拟态设计汉服管理APP"
-date: "2026-07-26"
-excerpt: "支持汉服分类管理、饰品管理、穿搭管理，支持国际化、暗黑主题"
+title: "支出记账APP"
+date: "2026-07-08"
+excerpt: "支出记账，支持查看日、月、年支出情况，支持国际化、暗黑主题"
 category: "Android"           # 可选，用于卡片上的分类徽标
-cover: "/images/hihanfuwithneumorphism/cover.webp"    # 可选，文章封面
-tags: ["JetpackCompose", "Room", "Hilt", "汉服"]
+cover: "/images/hiwalletwithmaterial/cover.webp"    # 可选，文章封面
+tags: ["JetpackCompose", "记账"]
 ---
 
-体验安装包请到[GitHub](https://github.com/HiCodeOnline/AndroidHiWalletWithNeumorphism/releases)下载，想自己打包看[手把手教你打包](#手把手教你打包)
+体验安装包请到[GitHub](https://github.com/HiCodeOnline/AndroidHiWalletWithMaterial/releases)下载，想自己打包的可以参考[手把手教你打包](#手把手教你打包)
 
 ## 源码仓库
 
-:::card{title="GitHub" url="https://github.com/HiCodeOnline/AndroidHiHanfuWithNeumorphism" image="/github.svg"}
+:::card{title="GitHub" url="https://github.com/HiCodeOnline/AndroidHiWalletWithMaterial" image="/github.svg"}
 :::
 
-:::card{title="Gitee" url="https://gitee.com/LikeOrLove/android-hi-hanfu-with-neumorphism" image="/gitee.svg"}
+:::card{title="Gitee" url="https://gitee.com/LikeOrLove/android-hi-wallet-with-material" image="/gitee.svg"}
 :::
 
 ## 效果图
 
 :::carousel{title="APP效果图"}
-![图1](/images/hihanfuwithneumorphism/p1.webp)
-![图2](/images/hihanfuwithneumorphism/p2.webp)
-![图3](/images/hihanfuwithneumorphism/p3.webp)
-![图3](/images/hihanfuwithneumorphism/p4.webp)
-![图3](/images/hihanfuwithneumorphism/p5.webp)
-![图3](/images/hihanfuwithneumorphism/p6.webp)
-![图3](/images/hihanfuwithneumorphism/p7.webp)
-![图3](/images/hihanfuwithneumorphism/p8.webp)
+![图1](/images/hiwalletwithmaterial/p1.webp)
+![图2](/images/hiwalletwithmaterial/p2.webp)
+![图3](/images/hiwalletwithmaterial/p3.webp)
+![图3](/images/hiwalletwithmaterial/p4.webp)
+![图3](/images/hiwalletwithmaterial/p5.webp)
+![图3](/images/hiwalletwithmaterial/p6.webp)
 :::
 
 ## 开发环境
@@ -41,7 +39,6 @@ tags: ["JetpackCompose", "Room", "Hilt", "汉服"]
 - Jetpack Compose
 - Room
 - Hilt
-- Navigation API
 - 国际化支持
 - 暗黑主题支持
 
@@ -50,7 +47,7 @@ tags: ["JetpackCompose", "Room", "Hilt", "汉服"]
 
 ### 1、下载源码
 
-选择文章开头GitHub、Gitee、CNB中的任意一个渠道，下载源码
+选择文章开头GitHub、Gitee中的任意一个渠道，下载源码
 
 ### 2、加载源码
 
@@ -97,7 +94,7 @@ maven { url = uri("https://maven.aliyun.com/nexus/content/repositories/google") 
     ```shell
     # Android Studio 自带了该工具
     # F:\software\AndroidStudio\jbr\bin
-    keytool -genkey -v -keystore hihanfu.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
+    keytool -genkey -v -keystore hiwallet.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
     ```
 
 生成完成后，在生成弹窗中选择该文件，按提示步骤即可完成打包操作
@@ -109,21 +106,18 @@ maven { url = uri("https://maven.aliyun.com/nexus/content/repositories/google") 
 ```plaintext
 app/
 ├── src/
-│   ├── main/java/online/hicode/android/hihanfu/
+│   ├── main/java/online/hicode/android/hiwallet/
 │   │   ├── data/  数据层
 │   │   │   ├── dao/   数据库操作
 │   │   │   ├── database/   数据定义
 │   │   │   ├── entity/   数据库实体
 │   │   │   ├── repository/   数据操作
 │   │   │   └── vo/   数据展示
-│   │   ├── neumorphism/   新拟态设计
 │   │   ├── ui/   界面层
 │   │   │   ├── components/   组件
-│   │   │   ├── navigation/   页面导航相关
 │   │   │   ├── screen/   页面
 │   │   │   └── theme/   主题
 │   │   ├── utils/   工具类
-│   │   ├── HiHanfuApplication.kt   Hilt APP入口
 │   │   └── MainActivity.kt   应用入口
 │   ├── res/
 │   │   ├── drawable/ 图片资源，使用的svg图标通过Vector Image导入进这里使用
@@ -139,7 +133,7 @@ app/
 ```
 
 
-## ❤️支持开源
+## ❤️支持作者
 
 :::tip
 关注微信公众号，及时获取最新源码通知，顺便帮助作者增加收入以支撑开源事业

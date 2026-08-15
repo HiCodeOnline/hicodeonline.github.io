@@ -1,7 +1,7 @@
 ---
 title: "新拟态设计支出记账APP"
 date: "2026-07-13"
-excerpt: "原生Android Jetpack Compose技术栈实现，支持国际化、暗黑主题"
+excerpt: "支出记账，支持查看日、月、年支出情况，支持国际化、暗黑主题"
 category: "Android"           # 可选，用于卡片上的分类徽标
 cover: "/images/hiwalletwithneumorphism/cover.webp"    # 可选，文章封面
 tags: ["JetpackCompose", "记账"]
