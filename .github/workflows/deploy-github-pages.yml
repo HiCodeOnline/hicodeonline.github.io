@@ -39,6 +39,7 @@ jobs:
         env:
           NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
           NEXT_PUBLIC_ADSENSE_CLIENT: ${{ secrets.NEXT_PUBLIC_ADSENSE_CLIENT }}
+          NEXT_PUBLIC_BUSUANZI_ENABLE: ${{ secrets.NEXT_PUBLIC_BUSUANZI_ENABLE }}
           NEXT_PUBLIC_BASE_PATH: 
           # NEXT_PUBLIC_SITE_URL: https://hicodeonline.github.io/${{ github.event.repository.name }}
 
