@@ -7,8 +7,6 @@ cover: "/images/hi3dsolarsystem/cover.webp"    # 可选，文章封面
 tags: ["Three.js", "太阳系"]
 ---
 
-写这个文档确实偷了懒，如果需要详细步骤，在Github仓库提个issue，我会花时间补充完整的文档内容
-
 ## 源码仓库
 
 :::card{title="GitHub" url="https://github.com/HiCodeOnline/WebHi3DSolarSystem" image="/github.svg"}
