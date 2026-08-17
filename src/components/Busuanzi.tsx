@@ -13,7 +13,8 @@ export default function Busuanzi() {
   }
   return (
     <Script
-      src={`https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js`}
+      defer={true}
+      src={`https://events.vercount.one/js`}
     />
   );
 }
